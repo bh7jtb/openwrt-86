@@ -9,8 +9,6 @@
 # File name: diy-part1.sh
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
-git clone https://github.com/esirplayground/luci-app-poweroff.git
-git clone https://github.com/awesome-openwrt/luci-app-fileassistant.git
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
@@ -21,3 +19,5 @@ git clone https://github.com/awesome-openwrt/luci-app-fileassistant.git
 #echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
 #echo 'src-git small8 https://github.com/kenzok8/small-package' >>feeds.conf.default
 echo 'src-git liuran001_packages https://github.com/liuran001/openwrt-packages' >>feeds.conf.default
+git clone https://github.com/esirplayground/luci-app-poweroff.git package/luci-app-poweroff
+git clone https://github.com/awesome-openwrt/luci-app-fileassistant.git package/luci-app-fileassistant
