@@ -22,9 +22,3 @@ echo 'src-git liuran001_packages https://github.com/bh7jtb/openwrt-packages' >>f
 git clone https://github.com/esirplayground/luci-app-poweroff.git package/luci-app-poweroff
 git clone https://github.com/awesome-openwrt/luci-app-fileassistant.git package/luci-app-fileassistant
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
-# Mod zzz-default-settings
-pushd package/lean/default-settings/files
-sed -i '/http/d' zzz-default-settings
-export orig_version="$(cat "zzz-default-settings" | grep DISTRIB_REVISION= | awk -F "'" '{print $2}')"
-sed -i "s/${orig_version}/${orig_version} ($(date +"%Y-%m-%d"))/g" zzz-default-settings
-popd
